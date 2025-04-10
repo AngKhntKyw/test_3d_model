@@ -45,9 +45,9 @@ class _HomePageState extends State<HomePage> {
       double scrollOffset = scrollController.offset;
       double newTheta = scrollOffset * 0.08;
       if ((newTheta - lastTheta).abs() > 2) {
-        double phi = 80;
-        double radius = 0;
-        flutter3DController.setCameraOrbit(newTheta, phi, radius);
+        // double phi = 80;
+        // double radius = 0;
+        flutter3DController.setCameraOrbit(newTheta, -newTheta + 80, newTheta);
         lastTheta = newTheta;
       } else if (scrollOffset == 0) {
         flutter3DController.setCameraOrbit(-90, 80, 0);
@@ -76,8 +76,8 @@ class _HomePageState extends State<HomePage> {
               child: Flutter3DViewer(
                 src: 'assets/assets/3d/free_porsche_911_carrera_4s.glb',
                 controller: flutter3DController,
-                activeGestureInterceptor: true,
-                enableTouch: true,
+                activeGestureInterceptor: false,
+                enableTouch: false,
                 progressBarColor: Colors.blueAccent,
                 onLoad: (modelAddress) async {
                   flutter3DController.setCameraOrbit(0, 10, 0);
