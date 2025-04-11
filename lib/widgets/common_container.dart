@@ -32,7 +32,7 @@ class _CommonContainerState extends State<CommonContainer> {
         width: size.width,
         decoration: BoxDecoration(
           border: Border.all(color: widget.color, width: 2),
-          color: widget.color.withValues(alpha: !onHovered ? 0.3 : 0.4),
+          color: widget.color.withValues(alpha: !onHovered ? 0.3 : 0),
           borderRadius: BorderRadius.circular(20),
         ),
         margin: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
