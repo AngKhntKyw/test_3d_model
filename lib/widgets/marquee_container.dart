@@ -36,7 +36,7 @@ class _MarqueeContainerState extends State<MarqueeContainer> {
           borderRadius: BorderRadius.circular(20),
         ),
         margin: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
-        padding: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
+        // padding: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
         child: widget.child,
       ),
     );

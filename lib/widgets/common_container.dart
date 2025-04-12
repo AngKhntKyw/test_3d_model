@@ -30,11 +30,11 @@ class _CommonContainerState extends State<CommonContainer> {
         duration: const Duration(milliseconds: 500),
         height: size.height - (size.height / 20),
         width: size.width,
-        decoration: BoxDecoration(
-          border: Border.all(color: widget.color, width: 2),
-          color: widget.color.withValues(alpha: !onHovered ? 0.3 : 0),
-          borderRadius: BorderRadius.circular(20),
-        ),
+        // decoration: BoxDecoration(
+        //   border: Border.all(color: widget.color, width: 2),
+        //   color: widget.color.withValues(alpha: !onHovered ? 0.3 : 0),
+        //   borderRadius: BorderRadius.circular(20),
+        // ),
         margin: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
         padding: EdgeInsets.all(MediaQuery.sizeOf(context).width / 80),
         child: widget.child,
