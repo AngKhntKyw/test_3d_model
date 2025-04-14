@@ -28,7 +28,7 @@ class _CommonContainerState extends State<CommonContainer> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        height: size.height - (size.height / 20),
+        height: size.height - (size.height / 8),
         width: size.width,
         // decoration: BoxDecoration(
         //   border: Border.all(color: widget.color, width: 2),

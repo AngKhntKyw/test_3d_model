@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 class MarqueeContainer extends StatefulWidget {
   final Color color;
   final Widget? child;
-  const MarqueeContainer({super.key, required this.color, this.child});
+  final int setWidth;
+  const MarqueeContainer({
+    super.key,
+    required this.color,
+    this.child,
+    required this.setWidth,
+  });
 
   @override
   State<MarqueeContainer> createState() => _MarqueeContainerState();
@@ -28,8 +34,14 @@ class _MarqueeContainerState extends State<MarqueeContainer> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        height: !onHovered ? size.width / 4 : size.width / 3.5,
-        width: !onHovered ? size.width / 4 : size.width / 3.5,
+        height:
+            !onHovered
+                ? size.width / widget.setWidth
+                : size.width / (widget.setWidth - 0.5),
+        width:
+            !onHovered
+                ? size.width / widget.setWidth
+                : size.width / (widget.setWidth - 0.5),
         decoration: BoxDecoration(
           border: Border.all(color: widget.color, width: 2),
           color: widget.color.withValues(alpha: !onHovered ? 0.3 : 0.4),

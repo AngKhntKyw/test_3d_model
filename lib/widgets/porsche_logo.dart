@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class PorscheLogo extends StatefulWidget {
   final double theta;
-  const PorscheLogo({super.key, required this.theta});
+  final double logoTheta;
+  const PorscheLogo({super.key, required this.theta, required this.logoTheta});
 
   @override
   State<PorscheLogo> createState() => _PorscheLogoState();
@@ -31,10 +32,10 @@ class _PorscheLogoState extends State<PorscheLogo>
   @override
   void didUpdateWidget(PorscheLogo oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.theta >= 60 && oldWidget.theta < 60) {
+    if (widget.theta >= widget.logoTheta && oldWidget.theta < widget.logoTheta) {
       _controller.stop();
       _controller.animateTo(0.0, duration: Duration(milliseconds: 300));
-    } else if (widget.theta < 60 && oldWidget.theta >= 60) {
+    } else if (widget.theta < widget.logoTheta && oldWidget.theta >= widget.logoTheta) {
       _controller.repeat(reverse: true);
     }
   }
@@ -65,6 +66,7 @@ class _PorscheLogoState extends State<PorscheLogo>
             firstChild: Image.asset(
               'assets/image/text_logo.jpeg',
               height: MediaQuery.sizeOf(context).height / 6,
+              width: MediaQuery.sizeOf(context).width / 1.5,
               filterQuality: FilterQuality.high,
             ),
             secondChild: Text(""),
