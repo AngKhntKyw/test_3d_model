@@ -22,6 +22,7 @@ class _DesktopLayoutState extends State<DesktopLayout> {
 
   bool startHorizontalScroll = false;
   //
+
   @override
   void initState() {
     flutter3DController = Flutter3DController();
@@ -88,6 +89,7 @@ class _DesktopLayoutState extends State<DesktopLayout> {
               },
             ),
           ),
+
           SingleChildScrollView(
             controller: verticalScrollController,
             physics: const BouncingScrollPhysics(),
@@ -101,13 +103,22 @@ class _DesktopLayoutState extends State<DesktopLayout> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(children: [Icon(Icons.menu), Text("Menu")]),
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed:
+                                  () => Scaffold.of(context).openDrawer(),
+                              icon: Icon(Icons.menu),
+                            ),
+                            Text("Menu"),
+                          ],
+                        ),
                         Image.asset(
                           'assets/image/text_logo.jpeg',
                           height: size.height / 60,
                         ),
                         Row(
-                          children: [Text("Login"), Icon(Icons.person_outline)],
+                          children: [Text("Login"), const Icon(Icons.person)],
                         ),
                       ],
                     ),
@@ -221,7 +232,6 @@ class _DesktopLayoutState extends State<DesktopLayout> {
                                       ),
                                       Text(
                                         "The overwhelming feeling of sitting in an amazing electric sports car: the new Taycan makes electricity even more electrifying. Performance even more impressive. And the extraordinary even more outstanding.",
-
                                         style: TextStyle(
                                           fontSize: size.height / 45,
                                           fontWeight: FontWeight.w500,
