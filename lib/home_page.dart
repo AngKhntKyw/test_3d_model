@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_3d_models/screens/desktop_layout.dart';
 import 'package:test_3d_models/screens/mobile_layout.dart';
 import 'package:test_3d_models/screens/tablet_layout.dart';
-import 'package:test_3d_models/widgets/drawer.dart';
+import 'package:test_3d_models/widgets/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
